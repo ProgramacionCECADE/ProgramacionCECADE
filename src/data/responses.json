@@ -57,6 +57,13 @@
       "response": "¡Estoy genial! Siempre emocionado de hablar sobre programación y CECADE. ¿Tienes alguna pregunta sobre nuestra especialidad?",
       "category": "greeting",
       "emotion": "excited"
+    },
+    {
+      "id":"greet_004",
+      "keywords":["quién eres", "eres", "qué haces"],
+      "response":"Soy un asistente virtual creado por CECADE. Mi objetivo es ayudarte con toda la información sobre programación y CECADE. ¿En qué puedo ayudarte?",
+      "category": "greeting",
+      "emotion": "excited"
     }
   ],
   "jokes": [
@@ -80,13 +87,20 @@
       "response": "¿Por qué los programadores odian la naturaleza? ¡Porque tiene demasiados bugs! 🌿🐛😆",
       "category": "joke",
       "emotion": "happy"
+    },
+    {
+      "id":"joke_004",
+      "keywords": ["administradores", "chiste administradores"],
+      "response": "¿Por qué los administradores siempre tienen una calculadora a mano? ¡Porque no pueden contar con sus empleados! 😄📱",
+      "category":"joke",
+      "emotion":"happy"
     }
   ],
   "general": [
     {
       "id": "gen_001",
       "keywords": ["cecade"],
-      "response": "CECADE es un centro de transformación de vida. Formamos profesionales preparados para los desafíos del mundo moderno.",
+      "response": "CECADE, por sus siglas Centro de Emprendimiento y Capacitación Empresarial. Formamos profesionales preparados para los desafíos del mundo moderno.",
       "category": "general",
       "emotion": "neutral"
     },
@@ -141,7 +155,7 @@
     },
     {
       "id":"gen_009",
-      "keywords": ["información", "cursos"],
+      "keywords": ["información", "info"],
       "response": "Para más información sobre nuestros cursos, te recomiendo visitar nuestro Facebok, puedes encontrarlo en la pestaña de información de esta misma página. ¡Es donde encontrarás toda la información que necesitas!",
       "category": "general",
       "emotion": "happy"
