@@ -118,10 +118,10 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
-        <div className="max-w-4xl mx-auto px-6 py-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Settings className="w-6 h-6 text-blue-600" />
@@ -179,11 +179,11 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
       </div>
 
       {/* Contenido */}
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 pb-20 sm:pb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {/* Configuración de Voz */}
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -317,7 +317,7 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
 
           {/* Configuración de Tema */}
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -425,7 +425,7 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
 
           {/* Configuración de Comportamiento */}
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 lg:col-span-2"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 lg:col-span-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
