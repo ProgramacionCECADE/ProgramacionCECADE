@@ -118,44 +118,45 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      <div className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700 sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Settings className="w-6 h-6 text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Configuración</h1>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+              <h1 className="text-lg sm:text-2xl font-bold text-gray-800 dark:text-white">Configuración</h1>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 sm:gap-3">
               <motion.button
                 onClick={handleResetConfig}
                 className="
-                  px-4 py-2 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg
-                  hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2
+                  px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 
+                  border border-gray-300 dark:border-gray-600 rounded-lg
+                  hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-1 sm:gap-2
                   focus:outline-none focus:ring-2 focus:ring-blue-300
                 "
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <RotateCcw className="w-4 h-4" />
-                Restaurar
+                <RotateCcw className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Restaurar</span>
               </motion.button>
               
               <motion.button
                 onClick={handleSaveConfig}
                 disabled={saving}
                 className="
-                  px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg
-                  transition-colors flex items-center gap-2
+                  px-3 sm:px-6 py-1 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg
+                  transition-colors flex items-center gap-1 sm:gap-2 text-xs sm:text-sm
                   disabled:opacity-50 disabled:cursor-not-allowed
                   focus:outline-none focus:ring-2 focus:ring-blue-300
                 "
                 whileHover={!saving ? { scale: 1.02 } : {}}
                 whileTap={!saving ? { scale: 0.98 } : {}}
               >
-                <Save className="w-4 h-4" />
+                <Save className="w-3 h-3 sm:w-4 sm:h-4" />
                 {saving ? 'Guardando...' : 'Guardar'}
               </motion.button>
               
@@ -163,14 +164,16 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
                 <motion.button
                   onClick={onBack}
                   className="
-                    px-4 py-2 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg
+                    px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 
+                    border border-gray-300 dark:border-gray-600 rounded-lg
                     hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors
                     focus:outline-none focus:ring-2 focus:ring-blue-300
                   "
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Volver
+                  <span className="hidden sm:inline">Volver</span>
+                  <span className="sm:hidden">←</span>
                 </motion.button>
               )}
             </div>
@@ -179,8 +182,8 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
       </div>
 
       {/* Contenido */}
-      <div className="max-w-4xl mx-auto p-4 sm:p-6 pb-20 sm:pb-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="max-w-4xl mx-auto p-3 sm:p-6 pb-24 sm:pb-6 space-y-4 sm:space-y-6">
+        <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
           {/* Configuración de Voz */}
           <motion.div
             className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6"
@@ -425,7 +428,7 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
 
           {/* Configuración de Comportamiento */}
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 lg:col-span-2"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 lg:col-span-2 w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}

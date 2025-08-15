@@ -72,19 +72,19 @@ export class ConfigService {
   static getSchoolInfo(): SchoolInfo {
     const contactInfo = (this.defaultConfig as any).contact;
     return {
-      name: "Colegio FLC",
-      specialty: "Centro Educativo de Computación y Desarrollo",
-      description: "Institución educativa especializada en tecnología y desarrollo de software",
+      name: "CECADE",
+      specialty: "Centro de Emprendimiento Capacitación y Desarrollo Empresarial",
+      description: "Institución educativa especializada en emprendimiento y desarrollo empresarial",
       technologies: ["JavaScript", "React", "Node.js", "Python", "Java"],
       contact: {
         address: contactInfo.address,
         phone: contactInfo.phone,
         email: contactInfo.email,
-        website: "www.colegioflc.edu.gt",
+        website: "www.cecade.edu.gt",
         socialMedia: {
           facebook: contactInfo.socialMedia.facebook,
           instagram: contactInfo.socialMedia.instagram,
-          linkedin: "linkedin.com/school/colegioflc"
+          linkedin: "linkedin.com/school/cecade"
         }
       }
     };
