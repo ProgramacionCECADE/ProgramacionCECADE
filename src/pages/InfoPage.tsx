@@ -46,7 +46,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 overflow-y-auto">
+    <div className="h-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -80,7 +80,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({ onBack }) => {
       </div>
 
       {/* Contenido de Contacto */}
-      <div className="max-w-4xl mx-auto p-6 h-[calc(80vh-8rem)] overflow-y-auto">
+      <div className="max-w-4xl mx-auto p-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"

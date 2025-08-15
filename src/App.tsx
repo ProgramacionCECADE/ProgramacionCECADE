@@ -84,13 +84,13 @@ function App() {
               className="hidden md:flex items-center gap-2"
               initial={{ opacity: 1 }}
               animate={{ 
-                opacity: isHeaderHovered ? 1 : 0,
-                x: isHeaderHovered ? 0 : 20,
-                pointerEvents: isHeaderHovered ? 'auto' : 'none'
+                opacity: (isHeaderHovered) ? 1 : 0,
+                x: (isHeaderHovered) ? 0 : 20,
+                pointerEvents: (isHeaderHovered) ? 'auto' : 'none'
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{ 
-                visibility: isHeaderHovered ? 'visible' : 'hidden'
+                visibility: (isHeaderHovered) ? 'visible' : 'hidden'
               }}
             >
               {navigationItems.map((item) => {

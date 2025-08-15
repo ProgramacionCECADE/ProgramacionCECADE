@@ -9,7 +9,7 @@
     },
     {
       "id": "prog_002",
-      "keywords": ["java", "lenguajes", "tecnologías"],
+      "keywords": ["lenguajes", "tecnologías"],
       "response": "En CECADE utilizamos Java para trabajar con sistemas de enfoque empresarial. ¡Tecnologías que demanda la industria!",
       "category": "programming",
       "emotion": "excited"
@@ -32,6 +32,13 @@
       "id": "prog_005",
       "keywords": ["python"],
       "response": "Python no forma parte de nuesto pensum actual.",
+      "category": "programming",
+      "emotion": "excited"
+    },
+    {
+      "id": "prog_006",
+      "keywords": ["java", "qué es java"],
+      "response": "Java es un lenguaje de programación orientado a objetos. Fue creado por Sun Microsystems en la década de 1990. Es uno de los lenguajes más populares y se utiliza en una amplia variedad de aplicaciones, desde aplicaciones web hasta aplicaciones móviles.",
       "category": "programming",
       "emotion": "excited"
     }
@@ -162,7 +169,7 @@
     },
     {
       "id":"gen_010",
-      "keywords": ["propósito"],
+      "keywords": ["propósito cecade", "hace cecade", "propósito", "objetivo"],
       "response": "El propósito de CECADE es la pre-incubación, incubación y aceleración de ideas de negocio, acompañadas de cursos técnicos y capacitación para empleo.",
       "category": "general",
       "emotion": "happy"
