@@ -181,7 +181,7 @@ export const useAssistant = (): UseAssistantReturn => {
     config: config || {
       voice: { rate: 1.0, pitch: 1.0, volume: 0.8, voiceIndex: 0 },
       theme: { mode: 'light', primaryColor: '#1E3A8A', avatarStyle: 'friendly' },
-      behavior: { autoSpeak: true, micSensitivity: 0.7, responseDelay: 500 }
+      behavior: { autoSpeak: true, micSensitivity: 0.7, responseDelay: 500, soundEffects: true }
     },
     isListening,
     isSpeaking,

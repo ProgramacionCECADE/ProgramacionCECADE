@@ -4,7 +4,7 @@ import configData from '../data/config.json';
 const STORAGE_KEY = 'cecade_assistant_config';
 
 export class ConfigService {
-  private static defaultConfig: AppConfig = configData as AppConfig;
+  private static defaultConfig = configData as any;
 
   /**
    * Obtiene la configuración actual (localStorage + defaults)
@@ -102,7 +102,7 @@ export class ConfigService {
    * Actualiza solo la configuración de voz
    */
   static async updateVoiceConfig(voiceConfig: Partial<AssistantConfig['voice']>): Promise<AssistantConfig> {
-    return this.updateConfig({ voice: voiceConfig });
+    return this.updateConfig({ voice: voiceConfig as AssistantConfig['voice'] });
   }
 
   /**
@@ -117,7 +117,7 @@ export class ConfigService {
    * Actualiza solo la configuración del tema
    */
   static async updateThemeConfig(themeConfig: Partial<AssistantConfig['theme']>): Promise<AssistantConfig> {
-    return this.updateConfig({ theme: themeConfig });
+    return this.updateConfig({ theme: themeConfig as AssistantConfig['theme'] });
   }
 
   /**
@@ -132,7 +132,7 @@ export class ConfigService {
    * Actualiza solo la configuración de comportamiento
    */
   static async updateBehaviorConfig(behaviorConfig: Partial<AssistantConfig['behavior']>): Promise<AssistantConfig> {
-    return this.updateConfig({ behavior: behaviorConfig });
+    return this.updateConfig({ behavior: behaviorConfig as AssistantConfig['behavior'] });
   }
 
   /**
@@ -156,7 +156,8 @@ export class ConfigService {
       behavior: {
         autoSpeak: config.behavior?.autoSpeak ?? defaults.behavior.autoSpeak,
         micSensitivity: config.behavior?.micSensitivity ?? defaults.behavior.micSensitivity,
-        responseDelay: config.behavior?.responseDelay ?? defaults.behavior.responseDelay
+        responseDelay: config.behavior?.responseDelay ?? defaults.behavior.responseDelay,
+        soundEffects: config.behavior?.soundEffects ?? defaults.behavior.soundEffects
       }
     };
   }

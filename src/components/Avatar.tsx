@@ -53,7 +53,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         transition: {
           duration: 2,
           repeat: Infinity,
-          ease: 'easeInOut'
+          ease: "easeInOut" as const
         }
       };
     }
@@ -65,7 +65,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         transition: {
           duration: 0.8,
           repeat: Infinity,
-          ease: 'easeInOut'
+          ease: "easeInOut" as const
         }
       };
     }
@@ -76,7 +76,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         transition: {
           duration: 1.5,
           repeat: Infinity,
-          ease: 'easeInOut'
+          ease: "easeInOut" as const
         }
       };
     }
@@ -197,7 +197,7 @@ export const Avatar: React.FC<AvatarProps> = ({
                     duration: 2,
                     repeat: Infinity,
                     delay: i * 0.3,
-                    ease: 'easeOut'
+                    ease: "easeOut" as const
                   }}
                 />
               ))}
@@ -270,7 +270,7 @@ export const MiniAvatar: React.FC<Pick<AvatarProps, 'emotion'>> = ({ emotion }) 
       transition={{
         duration: 2,
         repeat: Infinity,
-        ease: 'easeInOut'
+        ease: "easeInOut" as const
       }}
     >
       C
