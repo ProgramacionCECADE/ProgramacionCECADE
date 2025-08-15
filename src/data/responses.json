@@ -1,0 +1,136 @@
+{
+  "programming": [
+    {
+      "id": "prog_001",
+      "keywords": ["qué es programación", "programming", "código", "programar"],
+      "response": "La programación es el arte de crear instrucciones para que las computadoras resuelvan problemas. En CECADE enseñamos lenguajes como Python y Java para formar desarrolladores completos.",
+      "category": "programming",
+      "emotion": "excited"
+    },
+    {
+      "id": "prog_002",
+      "keywords": ["java", "lenguajes", "tecnologías"],
+      "response": "En CECADE utilizamos Java para trabajar con sistemas de enfoque empresarial. ¡Tecnologías que demanda la industria!",
+      "category": "programming",
+      "emotion": "excited"
+    },
+    {
+      "id": "prog_003",
+      "keywords": ["proyectos", "práctica", "experiencia"],
+      "response": "Nuestros estudiantes desarrollan proyectos reales: sistemas de gestión, calculadoras, interfaces gráficas . ¡Aprenden haciendo!",
+      "category": "programming",
+      "emotion": "happy"
+    },
+    {
+      "id": "prog_004",
+      "keywords": ["carrera", "futuro", "trabajo", "empleo"],
+      "response": "La programación ofrece excelentes oportunidades laborales. Nuestros egresados trabajan como desarrolladores, analistas de sistemas, y especialistas en tecnología en empresas líderes.",
+      "category": "programming",
+      "emotion": "excited"
+    }
+  ],
+  "greetings": [
+    {
+      "id": "greet_001",
+      "keywords": ["hola", "buenos días", "saludos", "hi"],
+      "response": "¡Hola! Soy el asistente virtual de CECADE. Estoy aquí para contarte todo sobre nuestra especialidad en programación. ¿Qué te gustaría saber?",
+      "category": "greeting",
+      "emotion": "happy"
+    },
+    {
+      "id": "greet_002",
+      "keywords": ["buenas tardes", "buenas noches"],
+      "response": "¡Buenas! Bienvenido a CECADE, donde formamos los programadores del futuro. ¿En qué puedo ayudarte hoy?",
+      "category": "greeting",
+      "emotion": "happy"
+    },
+    {
+      "id": "greet_003",
+      "keywords": ["cómo estás", "qué tal"],
+      "response": "¡Estoy genial! Siempre emocionado de hablar sobre programación y CECADE. ¿Tienes alguna pregunta sobre nuestra especialidad?",
+      "category": "greeting",
+      "emotion": "excited"
+    }
+  ],
+  "jokes": [
+    {
+      "id": "joke_001",
+      "keywords": ["chiste", "broma", "humor", "gracioso"],
+      "response": "¿Por qué los programadores prefieren el modo oscuro? ¡Porque la luz atrae bugs! 🐛😄",
+      "category": "joke",
+      "emotion": "happy"
+    },
+    {
+      "id": "joke_002",
+      "keywords": ["otro chiste", "más humor"],
+      "response": "¿Cuál es la bebida favorita de los programadores? ¡Java! ☕😂",
+      "category": "joke",
+      "emotion": "happy"
+    },
+    {
+      "id": "joke_003",
+      "keywords": ["divertido", "risas"],
+      "response": "¿Por qué los programadores odian la naturaleza? ¡Porque tiene demasiados bugs! 🌿🐛😆",
+      "category": "joke",
+      "emotion": "happy"
+    }
+  ],
+  "general": [
+    {
+      "id": "gen_001",
+      "keywords": ["cecade"],
+      "response": "CECADE es un centro de transformación de vida. Formamos profesionales preparados para los desafíos del mundo moderno.",
+      "category": "general",
+      "emotion": "neutral"
+    },
+    {
+      "id": "gen_002",
+      "keywords": ["inscripciones", "admisión", "estudiar"],
+      "response": "¡Excelente decisión! Para información sobre inscripciones y admisión, te recomiendo contactar directamente con la administración de Maná de Vida. ¡Te esperamos!",
+      "category": "general",
+      "emotion": "excited"
+    },
+    {
+      "id": "gen_003",
+      "keywords": ["gracias", "thank you"],
+      "response": "¡De nada! Ha sido un placer ayudarte. Si tienes más preguntas sobre programación o CECADE, ¡no dudes en preguntar!",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id": "gen_004",
+      "keywords": ["colegio", "institución", "asociación", "quiénes son"],
+      "response": "¡Somos Colegio FLC / CECADE! Una institución que transforma vidas a través del amor de Cristo.",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id": "gen_005",
+      "keywords": ["adiós", "bye", "hasta luego"],
+      "response": "¡Hasta luego! Espero haberte ayudado a conocer más sobre CECADE y la programación. ¡Que tengas un excelente día! 👋",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id": "gen_006",
+      "keywords": ["sexto", "primaria", "segundo básico"],
+      "response": "Las especialidades disponibles desde Sexto Primaria hasta Segundo Básico son: \n - Panadería \n- Productos Agroindustriales \n- Inglés.",
+      "category": "general",
+      "emotion": "happy"   
+    },
+    {
+      "id": "gen_007",
+      "keywords": ["tercero", "cuarto", "quinto", "bachillerato"],
+      "response": "Las especialidades disponibles desde Tercero Básico hasta Quinto Bachillerato son: \n - Programación \n - Call Center \n - Medicina \n - Diseño Gráfico ",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id": "gen_008",
+      "keywords": ["especialidades disponibles"],
+      "response": "Las especialidades disponibles son: Desde Sexto Primaria hasta Segundo Básico: \n - Panadería \n- Productos Agroindustriales \n- Inglés. Desde Tercero Básico hasta Quinto Bachillerato: \n - Programación \n - Call Center \n - Medicina \n - Diseño Gráfico ",
+      "category": "general",
+      "emotion": "happy"
+    }
+  ]
+}

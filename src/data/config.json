@@ -1,0 +1,35 @@
+{
+  "defaultConfig": {
+    "voice": {
+      "rate": 1.0,
+      "pitch": 1.0,
+      "volume": 0.8,
+      "voiceIndex": 0,
+      "preferredVoice": {
+      "name": "Microsoft Andres Online (Natural) - Spanish (Guatemala)",
+      "lang": "es-GT",
+      "description": "Voz masculina natural en español de Guatemala"
+    }
+    },
+    "theme": {
+      "mode": "light",
+      "primaryColor": "#1E3A8A",
+      "avatarStyle": "friendly"
+    },
+    "behavior": {
+      "autoSpeak": true,
+      "micSensitivity": 0.7,
+      "responseDelay": 500,
+      "soundEffects": true
+    }
+  },
+    "contact": {
+      "address": "Km.60 Finca 998 La Felicidad, Salida Antigua Carretera Masagua Escuintla, Escuintla, Guatemala",
+      "phone": "+502 4769-1929",
+      "email": "colegioflcescuintla@gmail.com",
+      "socialMedia": {
+        "facebook": "facebook.com/COLEGIOFLC",
+        "instagram": "@colegioflc"
+      }
+    }
+}
