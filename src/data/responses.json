@@ -100,7 +100,7 @@
     {
       "id": "gen_001",
       "keywords": ["cecade"],
-      "response": "CECADE, por sus siglas Centro de Emprendimiento y Capacitación Empresarial. Formamos profesionales preparados para los desafíos del mundo moderno.",
+      "response": "Centro de Emprendimiento, Capacitación y Desarrollo Empresarial (CECADE). Es un instituto orientado a ayudar a jóvenes, madres solteras y pequeñas empresas con formación técnica, mentalidad emprendedora, mentoría, desarrollo de prototipos y modelos de negocio.",
       "category": "general",
       "emotion": "neutral"
     },
@@ -157,6 +157,13 @@
       "id":"gen_009",
       "keywords": ["información", "info"],
       "response": "Para más información sobre nuestros cursos, te recomiendo visitar nuestro Facebok, puedes encontrarlo en la pestaña de información de esta misma página. ¡Es donde encontrarás toda la información que necesitas!",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id":"gen_010",
+      "keywords": ["propósito"],
+      "response": "El propósito de CECADE es la pre-incubación, incubación y aceleración de ideas de negocio, acompañadas de cursos técnicos y capacitación para empleo.",
       "category": "general",
       "emotion": "happy"
     }

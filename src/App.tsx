@@ -13,6 +13,7 @@ import { ConfigService } from './lib/configService';
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'config' | 'info'>('home');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
   const { currentEmotion } = useAssistant();
   const { theme, toggleTheme } = useTheme();
 
@@ -62,7 +63,11 @@ function App() {
   return (
     <div className="h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       {/* Navegación superior optimizada para móviles */}
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <div 
+        className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 transition-all duration-300"
+        onMouseEnter={() => setIsHeaderHovered(true)}
+        onMouseLeave={() => setIsHeaderHovered(false)}
+      >
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo y título */}
@@ -75,7 +80,19 @@ function App() {
             </div>
 
             {/* Navegación desktop mejorada */}
-            <div className="hidden md:flex items-center gap-2">
+            <motion.div 
+              className="hidden md:flex items-center gap-2"
+              initial={{ opacity: 1 }}
+              animate={{ 
+                opacity: isHeaderHovered ? 1 : 0,
+                x: isHeaderHovered ? 0 : 20,
+                pointerEvents: isHeaderHovered ? 'auto' : 'none'
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              style={{ 
+                visibility: isHeaderHovered ? 'visible' : 'hidden'
+              }}
+            >
               {navigationItems.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -100,7 +117,7 @@ function App() {
                   </motion.button>
                 );
               })}
-            </div>
+            </motion.div>
 
             {/* Botón de menú móvil mejorado */}
             <div className="md:hidden">
