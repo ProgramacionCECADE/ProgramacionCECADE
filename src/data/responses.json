@@ -106,7 +106,7 @@
   "general": [
     {
       "id": "gen_001",
-      "keywords": ["cecade"],
+      "keywords": ["qué es cecade", "qué significa cecade"],
       "response": "Centro de Emprendimiento, Capacitación y Desarrollo Empresarial (CECADE). Es un instituto orientado a ayudar a jóvenes, madres solteras y pequeñas empresas con formación técnica, mentalidad emprendedora, mentoría, desarrollo de prototipos y modelos de negocio.",
       "category": "general",
       "emotion": "neutral"
