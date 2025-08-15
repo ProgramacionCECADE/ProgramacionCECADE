@@ -182,7 +182,7 @@ export const ConfigPage: React.FC<ConfigPageProps> = ({ onBack }) => {
       </div>
 
       {/* Contenido */}
-      <div className="max-w-4xl mx-auto p-3 sm:p-6 pb-24 sm:pb-6 space-y-4 sm:space-y-6">
+      <div className="max-w-4xl mx-auto p-3 sm:p-6 pb-24 sm:pb-6 space-y-4 sm:space-y-6 h-[calc(100vh-8rem)] overflow-y-auto">
         <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
           {/* Configuración de Voz */}
           <motion.div

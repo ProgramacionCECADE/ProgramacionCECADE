@@ -80,7 +80,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({ onBack }) => {
       </div>
 
       {/* Contenido de Contacto */}
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-4xl mx-auto p-6 h-[calc(80vh-8rem)] overflow-y-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
