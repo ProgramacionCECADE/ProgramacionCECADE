@@ -2,7 +2,7 @@
   "programming": [
     {
       "id": "prog_001",
-      "keywords": ["qué es programación", "programming", "código", "programar"],
+      "keywords": ["qué es programación", "programming", "código", "programar", "programación"],
       "response": "La programación es el arte de crear instrucciones para que las computadoras resuelvan problemas. En CECADE enseñamos lenguajes como Python y Java para formar desarrolladores completos.",
       "category": "programming",
       "emotion": "excited"
@@ -25,6 +25,13 @@
       "id": "prog_004",
       "keywords": ["carrera", "futuro", "trabajo", "empleo"],
       "response": "La programación ofrece excelentes oportunidades laborales. Nuestros egresados trabajan como desarrolladores, analistas de sistemas, y especialistas en tecnología en empresas líderes.",
+      "category": "programming",
+      "emotion": "excited"
+    },
+    {
+      "id": "prog_005",
+      "keywords": ["python"],
+      "response": "Python no forma parte de nuesto pensum actual.",
       "category": "programming",
       "emotion": "excited"
     }
@@ -127,8 +134,15 @@
     },
     {
       "id": "gen_008",
-      "keywords": ["especialidades disponibles"],
+      "keywords": ["especialidades disponibles", "cursos"],
       "response": "Las especialidades disponibles son: Desde Sexto Primaria hasta Segundo Básico: \n - Panadería \n- Productos Agroindustriales \n- Inglés. Desde Tercero Básico hasta Quinto Bachillerato: \n - Programación \n - Call Center \n - Medicina \n - Diseño Gráfico ",
+      "category": "general",
+      "emotion": "happy"
+    },
+    {
+      "id":"gen_009",
+      "keywords": ["información", "cursos"],
+      "response": "Para más información sobre nuestros cursos, te recomiendo visitar nuestro Facebok, puedes encontrarlo en la pestaña de información de esta misma página. ¡Es donde encontrarás toda la información que necesitas!",
       "category": "general",
       "emotion": "happy"
     }
