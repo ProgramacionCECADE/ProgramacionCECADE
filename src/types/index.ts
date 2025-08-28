@@ -6,6 +6,7 @@ export interface ChatMessage {
   type: 'user' | 'assistant';
   content: string;
   timestamp: Date;
+  isUser?: boolean;
   audioUrl?: string;
 }
 

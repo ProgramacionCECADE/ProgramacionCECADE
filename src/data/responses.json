@@ -22,13 +22,6 @@
       "emotion": "happy"
     },
     {
-      "id": "prog_004",
-      "keywords": ["carrera", "futuro", "trabajo", "empleo"],
-      "response": "La programación ofrece excelentes oportunidades laborales. Nuestros egresados trabajan como desarrolladores, analistas de sistemas, y especialistas en tecnología en empresas líderes.",
-      "category": "programming",
-      "emotion": "excited"
-    },
-    {
       "id": "prog_005",
       "keywords": ["python"],
       "response": "Python no forma parte de nuesto pensum actual.",
@@ -38,7 +31,7 @@
     {
       "id": "prog_006",
       "keywords": ["java", "qué es java"],
-      "response": "Java es un lenguaje de programación orientado a objetos. Fue creado por Sun Microsystems en la década de 1990. Es uno de los lenguajes más populares y se utiliza en una amplia variedad de aplicaciones, desde aplicaciones web hasta aplicaciones móviles.",
+      "response": "Java es un lenguaje de programación de alto nivel orientado a objetos. Fue creado por Sun Microsystems en la década de 1990. Es uno de los lenguajes más populares y se utiliza en una amplia variedad de aplicaciones, desde aplicaciones web hasta aplicaciones móviles.",
       "category": "programming",
       "emotion": "excited"
     }
@@ -97,7 +90,7 @@
     },
     {
       "id":"joke_004",
-      "keywords": ["administradores", "chiste administradores"],
+      "keywords": ["chiste administradores"],
       "response": "¿Por qué los administradores siempre tienen una calculadora a mano? ¡Porque no pueden contar con sus empleados! 😄📱",
       "category":"joke",
       "emotion":"happy"

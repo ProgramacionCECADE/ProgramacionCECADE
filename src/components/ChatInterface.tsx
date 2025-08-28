@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Trash2, Settings, Mic, MicOff } from 'lucide-react';
+import { Send, Trash2, Settings, Mic, MicOff, Brain, BarChart3 } from 'lucide-react';
 import { MessageBubble, TypingIndicator, SystemMessage } from './MessageBubble';
 import { VoiceControls, VoiceStatus } from './VoiceControls';
 import { useAssistant } from '../hooks/useAssistant';
@@ -13,6 +13,7 @@ interface ChatInterfaceProps {
 export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) => {
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [showAIInsights, setShowAIInsights] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   
@@ -24,7 +25,10 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
     startListening,
     stopListening,
     clearMessages,
-    error
+    error,
+    aiAnalysis,
+    contextSummary,
+    isProcessingAI
   } = useAssistant();
 
   // Auto-scroll al final cuando hay nuevos mensajes
@@ -77,6 +81,23 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
         </div>
         
         <div className="flex items-center gap-2">
+          {/* Botón de insights de IA */}
+          <motion.button
+            onClick={() => setShowAIInsights(!showAIInsights)}
+            className={`
+              p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300
+              ${showAIInsights 
+                ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400' 
+                : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300'
+              }
+            `}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            title="Insights de IA"
+          >
+            <Brain className="w-5 h-5" />
+          </motion.button>
+
           {onOpenSettings && (
             <motion.button
               onClick={onOpenSettings}
@@ -113,6 +134,89 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
         isSpeaking={isSpeaking} 
         error={error}
       />
+
+      {/* Panel de insights de IA */}
+      <AnimatePresence>
+        {showAIInsights && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 border-b dark:border-gray-600 p-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Análisis de IA */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <BarChart3 className="w-4 h-4 text-blue-600" />
+                  <h3 className="font-semibold text-sm text-gray-800 dark:text-white">Análisis de IA</h3>
+                </div>
+                {aiAnalysis ? (
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 dark:text-gray-300">Sentimiento:</span>
+                      <span className={`font-medium ${
+                        aiAnalysis.sentiment === 'positive' ? 'text-green-600' :
+                        aiAnalysis.sentiment === 'negative' ? 'text-red-600' :
+                        'text-gray-600'
+                      }`}>
+                        {aiAnalysis.sentiment === 'positive' ? '😊 Positivo' :
+                         aiAnalysis.sentiment === 'negative' ? '😔 Negativo' :
+                         '😐 Neutral'}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 dark:text-gray-300">Confianza:</span>
+                      <span className="font-medium text-blue-600">{Math.round(aiAnalysis.confidence * 100)}%</span>
+                    </div>
+                    {aiAnalysis.keywords && aiAnalysis.keywords.length > 0 && (
+                      <div>
+                        <span className="text-gray-600 dark:text-gray-300">Temas:</span>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {aiAnalysis.keywords?.slice(0, 3).map((topic, index) => (
+                            <span key={index} className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-xs">
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Envía un mensaje para ver el análisis</p>
+                )}
+              </div>
+
+              {/* Contexto conversacional */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <Brain className="w-4 h-4 text-purple-600" />
+                  <h3 className="font-semibold text-sm text-gray-800 dark:text-white">Contexto</h3>
+                </div>
+                {contextSummary ? (
+                  <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {contextSummary}
+                  </p>
+                ) : (
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Inicia una conversación para generar contexto</p>
+                )}
+              </div>
+            </div>
+
+            {/* Indicador de procesamiento */}
+            {isProcessingAI && (
+              <div className="mt-3 flex items-center gap-2 text-xs text-blue-600 dark:text-blue-400">
+                <motion.div
+                  className="w-3 h-3 bg-blue-600 rounded-full"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                />
+                <span>Procesando con IA...</span>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Área de mensajes */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -162,7 +266,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
             />
           ))}
           
-          {isTyping && <TypingIndicator />}
+          {(isTyping || isProcessingAI) && <TypingIndicator />}
         </AnimatePresence>
         
         <div ref={messagesEndRef} />

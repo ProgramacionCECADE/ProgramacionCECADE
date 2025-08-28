@@ -8,27 +8,97 @@ graph TD
     B --> C[Web Speech API]
     B --> D[Local JSON Storage]
     B --> E[Audio Context API]
+    B --> F[Gemini AI Service]
     
     subgraph "Frontend Layer"
         B
-        F[React Components]
-        G[State Management - Zustand]
-        H[Audio Processing]
+        G[React Components]
+        H[State Management - Zustand]
+        I[Audio Processing]
+        J[AI Integration Layer]
     end
     
     subgraph "Browser APIs"
         C
         E
-        I[SpeechRecognition API]
-        J[SpeechSynthesis API]
+        K[SpeechRecognition API]
+        L[SpeechSynthesis API]
+    end
+    
+    subgraph "AI Services"
+        F
+        M[Context Analysis]
+        N[Response Generation]
+        O[Sentiment Detection]
     end
     
     subgraph "Data Layer"
         D
-        K[Responses JSON]
-        L[Configuration JSON]
+        P[Responses JSON]
+        Q[Configuration JSON]
+        R[Conversation Context]
     end
 ```
+
+## 7. Integración de Gemini AI
+
+### 7.1 Configuración del Servicio
+
+**GeminiAIService**
+
+```typescript
+class GeminiAIService {
+  private config: GeminiConfig;
+  private contextService: ContextService;
+  
+  async analyzeQuery(query: string, context: ConversationContext): Promise<AIAnalysis> {
+    // Análisis de intención y sentimiento
+    // Detección del nivel técnico del usuario
+    // Comprensión del contexto conversacional
+  }
+  
+  async generateResponse(analysis: AIAnalysis, query: string): Promise<string> {
+    // Generación de respuesta personalizada
+    // Adaptación al nivel del usuario
+    // Mantenimiento de coherencia contextual
+  }
+  
+  async updateContext(message: ChatMessage, analysis: AIAnalysis): Promise<void> {
+    // Actualización del contexto conversacional
+    // Aprendizaje de preferencias del usuario
+  }
+}
+```
+
+### 7.2 Flujo de Procesamiento con IA
+
+```mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant C as ChatInterface
+    participant AI as GeminiAIService
+    participant CS as ContextService
+    participant R as ResponseService
+    
+    U->>C: Envía consulta
+    C->>CS: Obtiene contexto actual
+    CS-->>C: Contexto de conversación
+    C->>AI: Analiza consulta + contexto
+    AI-->>C: Análisis (intención, sentimiento, nivel)
+    C->>AI: Genera respuesta inteligente
+    AI-->>C: Respuesta personalizada
+    C->>CS: Actualiza contexto
+    C->>R: Reproduce respuesta
+    R-->>U: Respuesta con audio
+```
+
+### 7.3 Características Avanzadas
+
+- **Aprendizaje Contextual**: El sistema mantiene memoria de conversaciones previas para mejorar respuestas futuras
+- **Adaptación de Nivel**: Detecta automáticamente si el usuario es principiante, intermedio o avanzado en programación
+- **Análisis Emocional**: Ajusta el tono de las respuestas según el estado emocional detectado
+- **Generación Dinámica**: Crea respuestas únicas en lugar de usar solo respuestas predefinidas
+- **Optimización de Contexto**: Mantiene solo la información relevante para evitar sobrecarga de tokens
 
 ## 2. Descripción de Tecnologías
 
@@ -38,13 +108,15 @@ graph TD
 
 * **Audio**: Web Speech API (SpeechRecognition + SpeechSynthesis)
 
+* **Inteligencia Artificial**: Google Gemini AI para procesamiento de lenguaje natural y generación de respuestas
+
 * **Animaciones**: Framer Motion para animaciones del avatar
 
 * **Iconos**: Lucide React
 
-* **Almacenamiento**: Local JSON files + LocalStorage para configuraciones
+* **Almacenamiento**: Local JSON files + LocalStorage para configuraciones + Context Storage para IA
 
-* **Backend**: Ninguno (aplicación completamente frontend)
+* **Backend**: Ninguno (aplicación completamente frontend con integración de servicios AI)
 
 ## 3. Definiciones de Rutas
 
@@ -129,6 +201,48 @@ interface AssistantResponse {
   response: string;
   category: 'programming' | 'greeting' | 'joke' | 'general';
   emotion: 'happy' | 'neutral' | 'excited' | 'thinking';
+  aiGenerated?: boolean;
+  confidence?: number;
+}
+```
+
+**Configuración de Gemini AI**
+
+```typescript
+interface GeminiConfig {
+  apiKey: string;
+  model: string;
+  temperature: number;
+  maxTokens: number;
+  contextWindow: number;
+}
+```
+
+**Contexto de Conversación**
+
+```typescript
+interface ConversationContext {
+  sessionId: string;
+  messages: ChatMessage[];
+  userProfile: {
+    detectedLevel: 'beginner' | 'intermediate' | 'advanced';
+    interests: string[];
+    sentiment: 'positive' | 'neutral' | 'negative';
+  };
+  lastInteraction: Date;
+}
+```
+
+**Análisis de IA**
+
+```typescript
+interface AIAnalysis {
+  intent: string;
+  sentiment: 'positive' | 'neutral' | 'negative';
+  confidence: number;
+  suggestedResponse: string;
+  context: string[];
+  userLevel: 'beginner' | 'intermediate' | 'advanced';
 }
 ```
 
@@ -152,11 +266,15 @@ graph TD
         J[SpeechService]
         K[ResponseService]
         L[ConfigService]
+        M[GeminiAIService]
+        N[ContextService]
     end
     
     subgraph "Data Layer"
-        M[JSON Files]
-        N[LocalStorage]
+        O[JSON Files]
+        P[LocalStorage]
+        Q[Conversation Context]
+        R[AI Cache]
     end
 ```
 
@@ -283,18 +401,28 @@ src/
 ├── hooks/
 │   ├── useSpeechRecognition.ts
 │   ├── useSpeechSynthesis.ts
-│   └── useAssistant.ts
+│   ├── useAssistant.ts
+│   ├── useGeminiAI.ts
+│   └── useConversationContext.ts
 ├── services/
 │   ├── speechService.ts
 │   ├── responseService.ts
-│   └── configService.ts
+│   ├── configService.ts
+│   ├── geminiAIService.ts
+│   ├── contextService.ts
+│   └── sentimentAnalysisService.ts
 ├── data/
 │   ├── responses.json
-│   └── config.json
+│   ├── config.json
+│   └── aiPrompts.json
 ├── types/
-│   └── index.ts
+│   ├── index.ts
+│   ├── aiTypes.ts
+│   └── contextTypes.ts
 └── utils/
     ├── audioUtils.ts
-    └── textUtils.ts
+    ├── textUtils.ts
+    ├── aiUtils.ts
+    └── contextUtils.ts
 ```
 

@@ -2,9 +2,9 @@
 
 ## 1. Visión General del Producto
 
-Asistente virtual interactivo en formato de aplicación web optimizado para tablets, diseñado específicamente para el colegio CECADE. El sistema incorpora capacidades avanzadas de reconocimiento de voz (speech-to-text) y síntesis de voz (text-to-speech) para facilitar una interacción natural y fluida con los usuarios durante las exhibiciones OpenHouse de la especialidad de programación.
+Asistente virtual interactivo en formato de aplicación web optimizado para tablets, diseñado específicamente para el colegio CECADE. El sistema incorpora capacidades avanzadas de reconocimiento de voz (speech-to-text), síntesis de voz (text-to-speech) y **inteligencia artificial de Google Gemini** para facilitar una interacción natural y fluida con los usuarios durante las exhibiciones OpenHouse de la especialidad de programación.
 
-El asistente tiene como objetivo principal proporcionar respuestas precisas sobre programación mientras ofrece una experiencia interactiva y lúdica que demuestre las capacidades tecnológicas del colegio.
+El asistente tiene como objetivo principal proporcionar respuestas precisas, contextualmente relevantes y naturalmente coherentes sobre programación, utilizando la IA de Gemini para procesar consultas complejas, generar respuestas inteligentes y mantener conversaciones fluidas que demuestren las capacidades tecnológicas avanzadas del colegio.
 
 ## 2. Características Principales
 
@@ -31,13 +31,24 @@ Nuestra aplicación de asistente virtual consta de las siguientes páginas princ
 | Página Principal | Control de Voz | Activar/desactivar micrófono, indicador visual de grabación, procesamiento de speech-to-text |
 | Página Principal | Área de Chat | Mostrar conversación en tiempo real, historial de preguntas y respuestas, formato de burbujas de chat |
 | Página Principal | Síntesis de Voz | Reproducir respuestas con text-to-speech, controles de pausa/reproducción, ajuste de velocidad |
-| Página Principal | Sistema de Respuestas | Procesar preguntas sobre programación, generar respuestas contextuales, incluir chistes y saludos personalizados |
+| Página Principal | Sistema de Respuestas IA | Procesar preguntas complejas con Gemini AI, generar respuestas contextuales inteligentes, análisis de sentimientos, comprensión de intención del usuario |
 | Página Configuración | Ajustes de Audio | Configurar volumen, velocidad de voz, selección de voz (masculina/femenina) |
 | Página Configuración | Temas Visuales | Cambiar colores, fondos, estilo del avatar, modo oscuro/claro |
 | Página Configuración | Configuración Avanzada | Ajustar sensibilidad del micrófono, tiempo de espera, idioma de respuestas |
 | Página Información | Datos del Colegio | Mostrar información sobre CECADE, historia, especialidades disponibles |
 | Página Información | Especialidad Programación | Detallar currículo, proyectos destacados, tecnologías enseñadas |
 | Página Información | Créditos | Información del equipo desarrollador, tecnologías utilizadas, agradecimientos |
+
+### 2.4 Capacidades de Inteligencia Artificial (Gemini)
+
+| Funcionalidad | Descripción | Beneficios |
+|---------------|-------------|------------|
+| Procesamiento de Lenguaje Natural | Comprensión avanzada de consultas complejas y contexto conversacional | Respuestas más precisas y naturales |
+| Generación de Respuestas Inteligentes | Creación de respuestas personalizadas basadas en el contexto y perfil del usuario | Experiencia más personalizada y relevante |
+| Análisis de Sentimientos | Detección del tono emocional en las preguntas del usuario | Respuestas empáticas y apropiadas al estado de ánimo |
+| Comprensión Contextual | Mantenimiento del contexto a lo largo de la conversación | Conversaciones más fluidas y coherentes |
+| Adaptación de Respuestas | Ajuste del nivel técnico según el perfil detectado del usuario | Explicaciones apropiadas para diferentes audiencias |
+| Detección de Intenciones | Identificación precisa de lo que el usuario realmente quiere saber | Respuestas más directas y útiles |
 
 ## 3. Proceso Principal
 
@@ -47,10 +58,12 @@ Nuestra aplicación de asistente virtual consta de las siguientes páginas princ
 2. Ve el avatar animado y la interfaz de chat
 3. Puede hacer clic en el botón de micrófono o escribir directamente
 4. Si usa voz: el sistema convierte speech-to-text y muestra la pregunta
-5. El asistente procesa la consulta y genera una respuesta contextual
-6. La respuesta se muestra en texto y se reproduce con text-to-speech
-7. El avatar reacciona visualmente según el tipo de respuesta
-8. El usuario puede continuar la conversación o explorar configuraciones
+5. **Gemini AI analiza la consulta**: comprende el contexto, detecta intenciones y sentimientos
+6. **Gemini genera respuesta inteligente**: crea una respuesta personalizada y contextualmente relevante
+7. La respuesta se muestra en texto y se reproduce con text-to-speech
+8. El avatar reacciona visualmente según el tipo de respuesta y emoción detectada
+9. El sistema mantiene el contexto conversacional para futuras interacciones
+10. El usuario puede continuar la conversación o explorar configuraciones
 
 **Flujo de Administración:**
 
