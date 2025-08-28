@@ -75,7 +75,7 @@ export const useSentimentAnalysis = (
         // Configuración por defecto para GeminiAI
         const defaultConfig: GeminiConfig = {
           apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-          model: 'gemini-pro',
+          model: 'gemini-2.5-flash-lite',
           temperature: 0.7,
           maxTokens: 1000,
           contextWindow: 4000

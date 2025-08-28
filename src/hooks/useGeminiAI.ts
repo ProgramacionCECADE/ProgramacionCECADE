@@ -78,7 +78,7 @@ export function useGeminiAI(options: UseGeminiAIOptions = {}) {
        isConnected: false,
        isProcessing: false,
        responseTime: 0,
-       modelVersion: 'gemini-pro',
+       modelVersion: 'gemini-2.5-flash-lite',
        uptime: 0,
        behaviorConfig: {
           responseStyle: 'friendly',
