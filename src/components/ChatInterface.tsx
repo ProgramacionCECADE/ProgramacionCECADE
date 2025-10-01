@@ -28,7 +28,8 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
     error,
     aiAnalysis,
     contextSummary,
-    isProcessingAI
+    isProcessingAI,
+    speechRecognitionCompatibility
   } = useAssistant();
 
   // Auto-scroll al final cuando hay nuevos mensajes
@@ -276,65 +277,24 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ onOpenSettings }) 
       <div className="p-4 bg-white dark:bg-gray-800 border-t dark:border-gray-700">
         {/* Controles de voz prominentes */}
         <div className="flex justify-center mb-4">
-          <motion.button
-            onClick={() => {
-              if (isListening) {
-                stopListening();
-              } else {
-                startListening();
-              }
-            }}
+          <VoiceControls
+            isListening={isListening}
+            onStartListening={startListening}
+            onStopListening={stopListening}
             disabled={false}
-            className={`
-              relative w-16 h-16 rounded-full flex items-center justify-center
-              transition-all duration-300 shadow-lg
-              ${isListening 
-                ? 'bg-red-500 hover:bg-red-600 text-white' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white'
-              }
-              focus:outline-none focus:ring-4 focus:ring-blue-300
-            `}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={isListening ? {
-              boxShadow: [
-                '0 0 0 0 rgba(239, 68, 68, 0.7)',
-                '0 0 0 20px rgba(239, 68, 68, 0)',
-                '0 0 0 0 rgba(239, 68, 68, 0.7)'
-              ]
-            } : {}}
-            transition={{
-              boxShadow: {
-                duration: 1.5,
-                repeat: isListening ? Infinity : 0,
-                ease: 'easeInOut'
-              }
-            }}
-          >
-            {isListening ? (
-              <MicOff className="w-7 h-7" />
-            ) : (
-              <Mic className="w-7 h-7" />
-            )}
-            
-            {/* Indicador de grabación */}
-            {isListening && (
-              <motion.div
-                className="absolute -top-1 -right-1 w-4 h-4 bg-red-400 rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.7, 1]
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              />
-            )}
-          </motion.button>
+            speechRecognitionCompatibility={speechRecognitionCompatibility}
+          />
         </div>
 
+        {/* Estado de voz */}
+        <div className="flex justify-center mb-4">
+          <VoiceStatus
+            isListening={isListening}
+            isSpeaking={isSpeaking}
+            error={error}
+            speechRecognitionCompatibility={speechRecognitionCompatibility}
+          />
+        </div>
         {/* Input de texto */}
         <div className="flex gap-3 items-end">
           <div className="flex-1">

@@ -22,15 +22,24 @@ interface UseAssistantReturn {
   updateConfig: (newConfig: Partial<AssistantConfig>) => void;
   clearMessages: () => void;
   error: string | null;
-  // Nuevas funcionalidades de IA
+  // Propiedades de IA
   aiAnalysis: AIAnalysis | null;
   contextSummary: string;
   isProcessingAI: boolean;
-  // Análisis de sentimientos
+  // Propiedades de análisis de sentimientos
   currentSentiment: SentimentAnalysis | null;
   conversationMood: EmotionalState | null;
   sentimentHistory: SentimentAnalysis[];
   emotionalShift: any | null;
+  // Nuevas propiedades de compatibilidad de reconocimiento de voz
+  speechRecognitionCompatibility: {
+    hasKnownIssues: boolean;
+    recommendedBrowser: string;
+    systemInfo: {
+      browser: string;
+      os: string;
+    };
+  };
 }
 
 export const useAssistant = (): UseAssistantReturn => {
@@ -48,7 +57,10 @@ export const useAssistant = (): UseAssistantReturn => {
     startListening: startSpeechRecognition,
     stopListening: stopSpeechRecognition,
     resetTranscript,
-    error: speechError
+    error: speechError,
+    hasKnownIssues,
+    recommendedBrowser,
+    systemInfo
   } = useSpeechRecognition({
     continuous: false,
     interimResults: true,
@@ -333,6 +345,12 @@ export const useAssistant = (): UseAssistantReturn => {
     currentSentiment,
     conversationMood,
     sentimentHistory,
-    emotionalShift
+    emotionalShift,
+    // Compatibilidad de reconocimiento de voz
+    speechRecognitionCompatibility: {
+      hasKnownIssues,
+      recommendedBrowser,
+      systemInfo
+    }
   };
 };
